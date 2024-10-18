@@ -73,11 +73,7 @@
 		}
 	}
 
-	.currency-list {
-		.dropdown-item {
-			z-index: 1000;
-		}
-	}
+
 
 	&-list {
 		display: flex;
@@ -139,30 +135,6 @@
 			align-items: center;
 		}
 
-		.currencyBox {
-			color: var(--color-white);
-			display: flex;
-			gap: 5px;
-			width: 170px;
-
-			div {
-				display: flex;
-				gap: 5px;
-			}
-
-			@include mobile {
-				width: 100%;
-				justify-content: space-between;
-			}
-
-			p {
-				margin-bottom: 0;
-
-				@include mobile {
-					display: none;
-				}
-			}
-		}
 		.dropdown-soc1als {
 			display: flex;
 			align-items: center;
@@ -171,10 +143,6 @@
 	}
 
 	// Burger
-	// .burger-pos {
-	// 	position: absolute;
-	// 	left: 0;
-	// }
 	.burger {
 		@include reset-button;
 		@include square(50px);
