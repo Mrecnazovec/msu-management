@@ -101,8 +101,8 @@ export async function getPostsAdministration(perPage, page) {
 		const data = JSON.parse(
 			JSON.stringify(
 				await PostModelsAdministration.find()
-					.skip(perPage * (page - 1))
-					.limit(perPage)
+					// .skip(perPage * (page - 1))
+					// .limit(perPage)
 			)
 		)
 		const dataCount = JSON.parse(JSON.stringify(await PostModelsAdministration.countDocuments({})))
@@ -186,8 +186,8 @@ export async function getPostsTeacher(perPage, page) {
 		const data = JSON.parse(
 			JSON.stringify(
 				await PostModelsTeacher.find()
-					.skip(perPage * (page - 1))
-					.limit(perPage)
+					// .skip(perPage * (page - 1))
+					// .limit(perPage)
 			)
 		)
 		const dataCount = JSON.parse(JSON.stringify(await PostModelsTeacher.countDocuments({})))
@@ -274,8 +274,8 @@ export async function getPostsSoviet(perPage, page) {
 		const data = JSON.parse(
 			JSON.stringify(
 				await PostModelsSoviet.find()
-					.skip(perPage * (page - 1))
-					.limit(perPage)
+					// .skip(perPage * (page - 1))
+					// .limit(perPage)
 			)
 		)
 		const dataCount = JSON.parse(JSON.stringify(await PostModelsSoviet.countDocuments({})))
@@ -359,8 +359,8 @@ export async function getPostsMentors(perPage, page) {
 		const data = JSON.parse(
 			JSON.stringify(
 				await PostModelsMentors.find()
-					.skip(perPage * (page - 1))
-					.limit(perPage)
+					// .skip(perPage * (page - 1))
+					// .limit(perPage)
 			)
 		)
 		const dataCount = JSON.parse(JSON.stringify(await PostModelsMentors.countDocuments({})))
@@ -442,8 +442,8 @@ export async function getPostsSubjects(perPage, page) {
 		const data = JSON.parse(
 			JSON.stringify(
 				await PostModelsSubject.find()
-					.skip(perPage * (page - 1))
-					.limit(perPage)
+					// .skip(perPage * (page - 1))
+					// .limit(perPage)
 			)
 		)
 		const dataCount = JSON.parse(JSON.stringify(await PostModelsSubject.countDocuments({})))

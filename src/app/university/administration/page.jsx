@@ -1,9 +1,9 @@
-import Breadcrumbs from '@/app/components/breadcrumbs/Breadcrumbs'
 import { getPostsAdministration } from '@/app/_actions/postActions'
+import Breadcrumbs from '@/app/components/breadcrumbs/Breadcrumbs'
 import PersonCard from '@/app/components/personCard/PersonCard'
-import './page.scss'
-import Link from 'next/link'
 import ChangeButton from '@/app/ui/ChangeButton'
+import Link from 'next/link'
+import './page.scss'
 
 export const revalidate = 10
 
@@ -13,25 +13,25 @@ export const metadata = {
 }
 
 const Administration = async ({ searchParams }) => {
-	let page = parseInt(searchParams.page, 10)
-	page = !page || page < 1 ? 1 : page
-	const perPage = 15
+	// let page = parseInt(searchParams.page, 10)
+	// page = !page || page < 1 ? 1 : page
+	// const perPage = 15
 
-	const { data, dataCount, error } = await getPostsAdministration(perPage, page)
+	const { data, dataCount, error } = await getPostsAdministration()
 
-	const totalPages = Math.ceil(dataCount / perPage)
+	// const totalPages = Math.ceil(dataCount / perPage)
 
-	const prevPage = page - 1 > 0 ? page - 1 : 1
-	const nextPage = page + 1
-	const isPageOutOfRange = page > totalPages
+	// const prevPage = page - 1 > 0 ? page - 1 : 1
+	// const nextPage = page + 1
+	// const isPageOutOfRange = page > totalPages
 
-	const pageNumbers = []
-	const offsetNumbers = 3
-	for (let i = page - offsetNumbers; i <= page + offsetNumbers; i++) {
-		if (i >= 1 && i <= totalPages) {
-			pageNumbers.push(i)
-		}
-	}
+	// const pageNumbers = []
+	// const offsetNumbers = 3
+	// for (let i = page - offsetNumbers; i <= page + offsetNumbers; i++) {
+	// 	if (i >= 1 && i <= totalPages) {
+	// 		pageNumbers.push(i)
+	// 	}
+	// }
 
 	const breadcrumbs = [
 		{
@@ -62,7 +62,7 @@ const Administration = async ({ searchParams }) => {
 						</div>
 					</div>
 				))}
-				<div className='container'>
+				{/* <div className='container'>
 					<div className='container-section'>
 						<div className={totalPages === 1 ? 'navigation-panel none' : 'navigation-panel'}>
 							{page === 1 ? (
@@ -94,7 +94,7 @@ const Administration = async ({ searchParams }) => {
 							)}
 						</div>
 					</div>
-				</div>
+				</div> */}
 			</section>
 		</main>
 	)

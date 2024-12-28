@@ -13,25 +13,25 @@ export const metadata = {
 }
 
 const Mentors = async ({ searchParams }) => {
-	let page = parseInt(searchParams.page, 10)
-	page = !page || page < 1 ? 1 : page
-	const perPage = 10
+	// let page = parseInt(searchParams.page, 10)
+	// page = !page || page < 1 ? 1 : page
+	// const perPage = 10
 
-	const { data, dataCount, error } = await getPostsMentors(perPage, page)
+	const { data, dataCount, error } = await getPostsMentors()
 
-	const totalPages = Math.ceil(dataCount / perPage)
+	// const totalPages = Math.ceil(dataCount / perPage)
 
-	const prevPage = page - 1 > 0 ? page - 1 : 1
-	const nextPage = page + 1
-	const isPageOutOfRange = page > totalPages
+	// const prevPage = page - 1 > 0 ? page - 1 : 1
+	// const nextPage = page + 1
+	// const isPageOutOfRange = page > totalPages
 
-	const pageNumbers = []
-	const offsetNumbers = 3
-	for (let i = page - offsetNumbers; i <= page + offsetNumbers; i++) {
-		if (i >= 1 && i <= totalPages) {
-			pageNumbers.push(i)
-		}
-	}
+	// const pageNumbers = []
+	// const offsetNumbers = 3
+	// for (let i = page - offsetNumbers; i <= page + offsetNumbers; i++) {
+	// 	if (i >= 1 && i <= totalPages) {
+	// 		pageNumbers.push(i)
+	// 	}
+	// }
 
 	const breadcrumbs = [
 		{
@@ -62,7 +62,7 @@ const Mentors = async ({ searchParams }) => {
 						</div>
 					</div>
 				))}
-				<div className='container'>
+				{/* <div className='container'>
 					<div className='container-section'>
 						<div className={totalPages === 1 ? 'navigation-panel none' : 'navigation-panel'}>
 							{page === 1 ? (
@@ -94,7 +94,7 @@ const Mentors = async ({ searchParams }) => {
 							)}
 						</div>
 					</div>
-				</div>
+				</div> */}
 			</section>
 		</main>
 	)
