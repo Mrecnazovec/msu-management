@@ -1,0 +1,63 @@
+:root {
+	--color-main: #fff;
+	--color-secondary: #FAF5F6;
+	--color-paragraph: #575757;
+	--color-gold: #efca7a;
+	--color-red: #7d0a35;
+	--color-dark-red: #3e0319;
+	--color-white: #FFF;
+	--color-dark: #000;
+	--color-text: var(--color-dark);
+
+	--color-gradient: linear-gradient(140deg, var(--color-red), var(--color-dark-red));
+
+	--border-radius: 20px;
+	--border-radius-small: 5px;
+
+	--font-family-base: 'Moscow University', 'IBM Plex Sans', sans-serif;
+
+	--container-width: 1240px;
+	--container-padding-x: 20px;
+
+	--padding-base: 30px;
+	--margin-base: var(--padding-base);
+
+	--section-padding-y: 25px;
+	--section-margin-y: var(--section-padding-y);
+
+	--button-height: 30px;
+
+	--transition-duration: 200ms;
+}
+
+:root[data-theme='dark'] {
+	--color-main: #fff;
+	--color-secondary: #faf5f6;
+	--color-paragraph: #575757;
+	--color-gold: #efca7a;
+	--color-red: #7d0a35;
+	--color-dark-red: #3e0319;
+	--color-white: #fff;
+	--color-dark: #000;
+	--color-text: var(--color-dark);
+
+	--color-gradient: linear-gradient(140deg, var(--color-red), var(--color-dark-red));
+
+	--border-radius: 20px;
+	--border-radius-small: 5px;
+
+	--font-family-base: 'Moscow University', 'IBM Plex Sans', sans-serif;
+
+	--container-width: 1240px;
+	--container-padding-x: 20px;
+
+	--padding-base: 30px;
+	--margin-base: var(--padding-base);
+
+	--section-padding-y: 25px;
+	--section-margin-y: var(--section-padding-y);
+
+	--button-height: 30px;
+
+	--transition-duration: 200ms;
+}

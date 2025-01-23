@@ -1,0 +1,21 @@
+@use './styles/mixins';
+
+.notFound {
+	@include mixins.flex-center();
+
+	div {
+		@include mixins.center;
+
+		h1 {
+			margin: 0;
+			text-align: center;
+		}
+
+		a {
+			width: fit-content;
+		}
+	}
+
+	
+}
+

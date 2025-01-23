@@ -1,0 +1,10 @@
+.banner {
+	align-self: center;
+
+	img {
+		height: auto;
+		border-radius: var(--border-radius-small);
+		border-top-left-radius: 0;
+		border-top-right-radius: 0;
+	}
+}

@@ -1,0 +1,68 @@
+@use '../../styles/media';
+@use '../../styles/mixins';
+
+.personCard {
+	gap: var(--margin-base);
+	padding-block: var(--section-padding-y);
+
+	.container {
+		display: flex;
+		gap: var(--margin-base);
+		align-items: center;
+		justify-content: space-between;
+
+		@include media.tablet {
+			flex-direction: column;
+			justify-content: center;
+		}
+	}
+	&:nth-child(2n) {
+		background-color: var(--color-secondary);
+		.img-box {
+			background-color: var(--color-main);
+			order: -1;
+		}
+	}
+
+
+	&-box {
+		max-width: 600px;
+	}
+	.title {
+		margin-bottom: var(--margin-base);
+	}
+	.text {
+		margin-bottom: var(--margin-base);
+	}
+	.link-box {
+		a {
+			color: var(--color-red);
+		}
+	}
+	.img-box {
+		border-radius: var(--border-radius);
+		overflow: hidden;
+		background-color: var(--color-secondary);
+		min-width: 300px;
+		height: 383px;
+		@include mixins.center;
+		@include media.tablet {
+			order: -1;
+		}
+		@include media.mobile {
+			height: fit-content;
+		}
+		.empty-img {
+			width: 300px;
+			
+		}
+	}
+	img {
+		width: 300px;
+	}
+	.card--big {
+		width: 500px;
+		max-width: 100%;
+		height: auto;
+	}
+}

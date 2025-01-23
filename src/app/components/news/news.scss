@@ -1,0 +1,84 @@
+@use '../../styles/media';
+@use '../../styles/mixins';
+
+.news {
+	padding-block: var(--section-padding-y);
+	margin-bottom: calc(var(--section-margin-y)*2);
+
+	.auto {
+		height: auto;
+	}
+
+	h2 {
+		margin: 0;
+		margin-bottom: var(--margin-base);
+		font-weight: 300;
+	}
+
+	&-slider {
+		margin-right: var(--margin-base);
+		width: 30%;
+		max-width: 360px;
+
+		@include media.tablet {
+			width: 50%;
+			--margin-base: 15px;
+		}
+
+		@include media.mobile {
+			width: 100%;
+		}
+		&-box {
+			background: var(--color-gradient);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			border-radius: var(--border-radius);
+			margin-bottom: var(--margin-base);
+			aspect-ratio: 3/2;
+			overflow: hidden;
+
+			@include media.mobile {
+				aspect-ratio: 4/2;
+
+			}
+
+			img {
+				width: 100%;
+				height: 100%;
+				border-radius: var(--border-radius);
+
+				@include mixins.img-effect
+			}
+		}
+		&-title {
+			margin-bottom: var(--margin-base);
+			max-width: 100%;
+
+			display: -webkit-box;
+			-webkit-box-orient: vertical;
+			overflow: hidden;
+			-webkit-line-clamp: 1;
+		}
+		&-description {
+			max-width: 100%;
+
+			display: -webkit-box;
+			-webkit-box-orient: vertical;
+			overflow: hidden;
+			-webkit-line-clamp: 4;
+
+			span {
+				display: block;
+			}
+		}
+	}
+	.newsShow {
+		position: absolute;
+		top: 104.5%;
+		right: 44px;
+	}
+	.container {
+		position: relative;
+	}
+}

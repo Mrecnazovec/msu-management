@@ -1,0 +1,23 @@
+.main {
+	.h2 {
+		margin-bottom: var(--margin-base);
+	}
+	p {
+		:not(:last-child) {
+			margin-bottom: var(--margin-base);
+		}
+	}
+	a {
+		color: var(--color-red);
+	}
+
+	.aboutUniversity {
+		.container {
+			background-color: var(--color-secondary);
+			padding-block: calc(var(--section-padding-y) * 2);
+		}
+	}
+	.addictive-info {
+	}
+}
+

@@ -1,0 +1,172 @@
+@use '../../../../styles/media';
+@use '../../../../styles/mixins';
+
+form {
+	.start {
+		align-self: flex-start;
+		margin-bottom: var(--margin-base);
+	}
+	@include mixins.center;
+	.preview-box {
+		border-radius: var(--border-radius);
+		overflow: hidden;
+		background-color: var(--color-red);
+		min-width: 300px;
+		height: 383px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+
+		@include media.mobile-s {
+			height: fit-content;
+		}
+
+		@include mixins.center;
+
+		svg {
+			color: var(--color-gold);
+		}
+
+		&.not-mode {
+			min-width: 300px;
+			@include media.mobile-s {
+				height: 383px;
+			}
+
+			img,
+			svg {
+				width: 300px;
+				max-width: 100%;
+				height: 100%;
+			}
+		}
+		img,
+		svg {
+			width: 500px;
+			max-width: 100%;
+			height: auto;
+		}
+	}
+	.preview-change {
+		color: var(--color-red);
+		cursor: pointer;
+	}
+
+	.img-label {
+		width: fit-content;
+		text-align: center;
+		cursor: pointer;
+	}
+
+	label {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		margin-bottom: var(--margin-base);
+
+		textarea {
+			resize: none;
+			overflow: hidden;
+			width: auto;
+			height: auto;
+			outline: none;
+			border: 1px solid var(--color-red);
+			border-radius: var(--border-radius-small);
+			background: transparent;
+			padding: 5px;
+			color: var(--color-red);
+
+			&:focus {
+				outline: 1px solid var(--color-red);
+			}
+		}
+		input {
+			padding: 5px;
+			outline: none;
+			border: 1px solid var(--color-red);
+			border-radius: var(--border-radius-small);
+			background: transparent;
+			padding: 5px;
+			color: var(--color-red);
+
+			&:focus {
+				outline: 1px solid var(--color-red);
+			}
+		}
+	}
+	.description-box {
+		width: 100%;
+		.addDesc {
+			display: none;
+		}
+
+		.addDesc {
+			display: block;
+			@include mixins.reset-button;
+			background-color: var(--color-red);
+			color: var(--color-white);
+			padding: 5px 15px;
+			border-radius: var(--border-radius-small);
+			border: 1px solid transparent;
+			cursor: pointer;
+			font-size: 16px;
+
+			@include media.hover {
+				background-color: transparent;
+				color: var(--color-red);
+				border: 1px solid var(--color-red);
+			}
+		}
+	}
+	.errorMessage {
+		color: var(--color-red);
+	}
+	.btnPanel {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-bottom: var(--margin-base);
+	}
+	.submitButton {
+		@include mixins.reset-button;
+		background-color: var(--color-red);
+		color: var(--color-white);
+		padding: 5px 15px;
+		border-radius: var(--border-radius-small);
+		border: 1px solid transparent;
+		cursor: pointer;
+		font-size: 16px;
+
+		@include media.hover {
+			background-color: transparent;
+			color: var(--color-red);
+			border: 1px solid var(--color-red);
+		}
+	}
+
+	.check-box {
+		width: 30px;
+		height: 30px;
+		border: 1px solid var(--color-red);
+		border-radius: var(--border-radius-small);
+		cursor: pointer;
+
+		&.checked {
+			.check-svg {
+				@include mixins.center;
+			}
+		}
+		.check-svg {
+			width: 100%;
+			height: 100%;
+			display: none;
+
+			svg {
+				width: 100%;
+				height: 100%;
+				color: var(--color-red);
+			}
+		}
+	}
+}

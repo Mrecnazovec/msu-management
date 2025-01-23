@@ -1,0 +1,66 @@
+@use '../../../styles/mixins';
+@use '../../../styles/media';
+
+.subject {
+	&-section {
+		padding-block: calc(var(--section-padding-y) * 2);
+		a {
+			color: var(--color-red);
+		}
+		button {
+			color: var(--color-red);
+			padding: 10px;
+			cursor: pointer;
+
+			@include media.hover {
+				opacity: 0.8;
+			}
+
+			@include mixins.reset-button;
+		}
+		img {
+			width: 100%;
+			height: auto;
+			border-radius: var(--border-radius);
+			margin-bottom: var(--margin-base);
+			max-height: 600px;
+		}
+		h2,
+		h3 {
+			margin: 0;
+		}
+		h2 {
+			margin-bottom: calc(var(--margin-base) / 2);
+		}
+		h3 {
+			margin-bottom: calc(var(--margin-base));
+		}
+		p {
+			margin-bottom: calc(var(--margin-base));
+		}
+		.link-group {
+			display: flex;
+			flex-direction: column;
+			row-gap: var(--margin-base);
+		}
+		.downloadButton-box {
+			display: flex;
+			flex-direction: column;
+			row-gap: var(--margin-base);
+
+			button {
+				width: fit-content;
+			}
+		}
+	}
+	.materialsButtonChange {
+		margin-bottom: var(--margin-base);
+		a {
+			color: var(--color-white);
+			@include media.hover {
+				color: var(--color-red);
+
+			}
+		}
+	}
+}

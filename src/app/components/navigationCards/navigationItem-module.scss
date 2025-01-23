@@ -1,0 +1,29 @@
+@use '../../styles/mixins';
+
+.tiles-block {
+	max-width: 100%;
+	max-height: 400px;
+	@include mixins.img-effect;
+}
+
+.tiles-text {
+	color: var(--color-white);
+	position: absolute;
+	z-index: 1;
+	left: 30px;
+	bottom: 15px;
+
+	display: flex;
+	align-items: center;
+
+	svg {
+		width: 1em;
+		height: 1em;
+	}
+}
+
+.tiles-wrapper {
+	border-radius: var(--border-radius);
+	display: flex;
+	width: 100%;
+}

@@ -1,0 +1,81 @@
+@use '../../styles/mixins';
+@use '../../styles/media';
+
+.help {
+	&-section {
+		padding-block: var(--section-padding-y);
+
+		.help-card {
+			@include mixins.center;
+			align-items: flex-start;
+
+			&:not(:last-child) {
+				margin-bottom: var(--margin-base);
+			}
+
+			h2 {
+				margin: 0;
+				margin-bottom: var(--margin-base);
+			}
+
+			.paragraph {
+				
+				&:not(:last-child) {
+					margin-bottom: calc(var(--margin-base)/2);
+				}
+			}
+
+			.link-box {
+				display: flex;
+				align-items: center;
+				align-self: center;
+				gap: calc(var(--margin-base)*2);
+
+				@include media.mobile {
+					flex-direction: column;
+				}
+
+				.circle {
+					width: 200px;
+					height: 200px;
+					overflow: hidden;
+					border-radius: 50%;
+					@include mixins.center;
+					background: var(--color-gradient);
+					margin-bottom: calc(var(--margin-base)/2);
+
+					svg {
+						width: 130px;
+						height: 130px;
+						color: #FCEDA9;
+					}
+
+					&.blue {
+						background: #17009B;
+
+						
+
+						svg {
+							color: white;
+						}
+					}
+					&.bgNone {
+						background: transparent;
+					}
+
+
+				}
+
+				p{
+					max-width: 200px;
+					text-align: center;
+					color: var(--color-red);
+
+					&.blue {
+						color: #17009B;
+					}
+				}
+			}
+		}
+	}
+}

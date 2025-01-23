@@ -1,0 +1,98 @@
+@use '../styles/media';
+
+.entrance {
+	&-section-about {
+		.container {
+			background-color: var(--color-secondary);
+		}
+		.container-section {
+			padding-block: var(--section-padding-y);
+
+			h2 {
+				margin: 0;
+				margin-bottom: calc(var(--margin-base) / 2);
+			}
+
+			.paragraph {
+				margin-bottom: calc(var(--margin-base));
+
+				a {
+					color: var(--color-red);
+				}
+			}
+
+			.points {
+				margin-bottom: var(--margin-base);
+				&-item {
+					display: flex;
+					justify-content: space-evenly;
+					align-items: center;
+					gap: var(--margin-base);
+
+					p {
+						padding-right: 102px;
+
+						@include media.mobile {
+							padding: 0;
+						}
+					}
+
+					&:not(:last-child) {
+						margin-bottom: var(--margin-base);
+					}
+
+					&:nth-child(2n) {
+						p {
+							order: -1;
+							text-align: right;
+							padding-right: 0;
+							padding-left: 102px;
+							@include media.mobile {
+								padding: 0;
+							}
+						}
+					}
+
+					@include media.mobile {
+						flex-direction: column;
+						justify-content: center;
+
+						svg {
+							order: -1;
+						}
+						p {
+							text-align: center !important;
+						}
+					}
+					p {
+						a {
+							color: var(--color-red);
+						}
+					}
+					svg {
+						width: 72px;
+						height: 72px;
+						flex-shrink: 0;
+						color: var(--color-red);
+					}
+				}
+			}
+		}
+	}
+	&-section-exams {
+		padding-block: var(--section-padding-y);
+
+		.info {
+			margin-bottom: var(--margin-base);
+			h3 {
+				margin: 0;
+				margin-bottom: var(--margin-base);
+			}
+		}
+		a {
+			display: block;
+			color: var(--color-red);
+			margin-bottom: var(--margin-base);
+		}
+	}
+}

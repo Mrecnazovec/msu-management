@@ -1,0 +1,11 @@
+@use '../../styles/mixins';
+@use '../../styles/media';
+
+.formChange {
+	padding-block: calc(var(--section-padding-y) * 2);
+
+	@include mixins.center;
+	margin-block: auto;
+
+
+}

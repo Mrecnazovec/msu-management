@@ -1,0 +1,132 @@
+@use '../../styles/mixins';
+@use '../../styles/media';
+
+.form {
+	@include mixins.center;
+
+	&.form-other {
+		width: 500px;
+		max-width: 90%;
+	}
+	@include media.mobile-s {
+		width: 90%;
+	}
+	.avatar-box {
+		border-radius: var(--border-radius);
+		overflow: hidden;
+		background-color: var(--color-red);
+		width: fit-content;
+		max-height: 383px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		align-self: center;
+		cursor: pointer;
+
+		img,
+		svg {
+			width: 300px;
+			max-width: 100%;
+			height: 100%;
+			color: var(--color-gold);
+		}
+
+		&.card--big {
+			img,
+			svg {
+				width: 500px;
+				max-width: 100%;
+				height: auto;
+			}
+
+			@include media.mobile-s {
+				height: fit-content;
+			}
+		}
+	}
+	.avatar-change {
+		cursor: pointer;
+		text-align: center;
+		color: var(--color-red);
+	}
+
+	form {
+		width: 100%;
+	}
+
+	label {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		&:not(:last-child) {
+			margin-bottom: var(--margin-base);
+		}
+	}
+
+	input {
+		width: 100%;
+		outline: none;
+		border: 1px solid var(--color-red);
+		border-radius: var(--border-radius-small);
+		background: transparent;
+		padding: 5px;
+		color: var(--color-red);
+
+		&:focus {
+			outline: 1px solid var(--color-red);
+		}
+	}
+	.showPassword, .confirmButton {
+		@include mixins.reset-button;
+		width: 100%;
+		padding: 5px;
+		color: var(--color-white);
+		border: 1px solid var(--color-red);
+		border-radius: var(--border-radius-small);
+		background-color: var(--color-red);
+		cursor: pointer;
+		margin-bottom: var(--margin-base);
+
+		@include media.hover {
+			background-color: transparent;
+			color: var(--color-red);
+		}
+	}
+	.ready {
+		text-align: center;
+		color: var(--color-red);
+	}
+	.errorMessage {
+		color: red;
+	}
+
+	.showPassword {
+		margin-bottom: var(--margin-base);
+	}
+
+	.check-box {
+		width: 30px;
+		height: 30px;
+		border: 1px solid var(--color-red);
+		border-radius: var(--border-radius-small);
+		cursor: pointer;
+
+		&.checked {
+			.check-svg {
+				@include mixins.center;
+			}
+		}
+		.check-svg {
+			width: 100%;
+			height: 100%;
+			display: none;
+
+			svg {
+				width: 100%;
+				height: 100%;
+				color: var(--color-red);
+			}
+		}
+	}
+}

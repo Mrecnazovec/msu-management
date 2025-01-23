@@ -1,0 +1,131 @@
+@use '../styles/media';
+@use '../styles/mixins';
+
+main {
+	display: flex;
+	flex-direction: column;
+
+	.news {
+		padding-top: calc(var(--section-padding-y));
+		padding-bottom: calc(var(--section-padding-y) * 2);
+
+		.changeButton {
+			width: fit-content;
+			margin-bottom: var(--margin-base);
+		}
+
+		h2 {
+			margin: 0;
+			font-weight: 300;
+			margin-bottom: calc(var(--margin-base));
+		}
+
+		.errorPage {
+			@include mixins.center;
+
+			a {
+				color: var(--color-red);
+			}
+		}
+
+		.navigation-panel {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+
+			&.none {
+				display: none;
+			}
+
+			.numbers-panel {
+				display: flex;
+				gap: calc(var(--margin-base) / 2);
+
+				a {
+					&.active {
+						color: var(--color-red);
+					}
+				}
+			}
+
+			.news-navigation {
+				font-family: 'Moscow University';
+				padding: 6px 20px;
+				background: var(--color-gradient);
+				color: var(--color-gold);
+				border-radius: var(--border-radius-small);
+				font-size: 16px;
+
+				&.disabled {
+					opacity: 0.6;
+				}
+			}
+		}
+
+		&-content {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			margin-bottom: calc(var(--margin-base) * 2);
+
+			gap: var(--padding-base);
+			@include media.mobile {
+				--padding-base: 15px;
+				--margin-base: var(--padding-base);
+			}
+
+			&-single {
+				&-box {
+					background: var(--color-gradient);
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					border-radius: var(--border-radius);
+					margin-bottom: var(--margin-base);
+					aspect-ratio: 3 / 2;
+					overflow: hidden;
+
+					img {
+						width: 100%;
+						height: 100%;
+						border-radius: var(--border-radius);
+
+						@include mixins.img-effect;
+					}
+					.auto {
+						height: auto;
+					}
+				}
+
+				&-title {
+					margin-bottom: var(--margin-base);
+					max-width: 100%;
+					display: -webkit-box;
+					-webkit-box-orient: vertical;
+					overflow: hidden;
+					-webkit-line-clamp: 1;
+				}
+
+				&-description {
+					max-width: 100%;
+					display: -webkit-box;
+					-webkit-box-orient: vertical;
+					overflow: hidden;
+					-webkit-line-clamp: 4;
+
+					span {
+						display: block;
+					}
+				}
+			}
+
+			@include media.tablet {
+				grid-template-columns: repeat(2, 1fr);
+			}
+
+			@include media.mobile-s {
+				grid-template-columns: repeat(1, 1fr);
+			}
+		}
+	}
+
+}

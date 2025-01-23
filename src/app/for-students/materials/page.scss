@@ -1,0 +1,66 @@
+@use '../../styles/media';
+@use '../../styles/mixins';
+
+.materials {
+	&-section {
+		padding-block: calc(var(--section-padding-y) * 2);
+	}
+	&-container {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: var(--padding-base);
+
+		@include media.mobile {
+			@include mixins.center;
+		}
+
+		.tiles-wrapper {
+			aspect-ratio: 2.2796934865900385;
+
+			.tiles-text {
+				font-size: clamp(18px, 2.0833333333vw, 20px);
+			}
+		}
+		.tiles-block {
+			width: 100% !important;
+			height: 100% !important;
+		}
+	}
+	.navigation-panel {
+		padding-block: var(--section-padding-y);
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		&.none {
+			display: none;
+		}
+
+		.numbers-panel {
+			display: flex;
+			gap: calc(var(--margin-base) / 2);
+
+			a {
+				&.active {
+					color: var(--color-red);
+				}
+			}
+		}
+
+		.news-navigation {
+			font-family: 'Moscow University';
+			padding: 6px 20px;
+			background: var(--color-gradient);
+			color: var(--color-gold);
+			border-radius: var(--border-radius-small);
+			font-size: 16px;
+
+			&.disabled {
+				opacity: 0.6;
+			}
+		}
+	}
+	.materialsButtonChange {
+		margin-bottom: var(--margin-base);
+	}
+}

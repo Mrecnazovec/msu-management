@@ -1,0 +1,102 @@
+@use '../../styles/media';
+@use '../../styles/mixins';
+
+.plan {
+	&-section {
+		a {
+			color: var(--color-red);
+		}
+		button {
+			color: var(--color-red);
+			cursor: pointer;
+
+			@include media.hover {
+				opacity: 0.8;
+			}
+			@include mixins.reset-button;
+		}
+		padding-block: calc(var(--section-padding-y) * 2);
+		
+		.disable {
+			display: none;
+		}
+
+		.disable, .active {
+			overflow-x: scroll;
+			-ms-overflow-style: none;
+			scrollbar-width: none;
+
+			&::-webkit-scrollbar {
+				display: none;
+			}
+		}
+		.navPanel {
+			display: flex;
+			column-gap: var(--padding-base);
+			margin-bottom: var(--margin-base);
+
+			p{
+				margin: 0;
+				padding: 10px;
+
+				@include media.mobile-s {
+					text-align: center;
+				}
+
+				&.disable {
+					display: block;
+				}
+				&.active {
+					color: var(--color-red);
+				}
+			}
+		}
+
+		.container-section {
+			
+
+			&:not(:last-child) {
+				padding-bottom: calc(var(--section-padding-y) * 2);
+			}
+		}
+		h2 {
+			margin: 0;
+			margin-bottom: var(--margin-base);
+
+			@include media.tablet {
+				margin-bottom: calc(var(--margin-base) / 2);
+			}
+		}
+		table {
+			width: 100%;
+
+			border: 1px solid var(--color-red);
+			border-collapse: collapse;
+			@include mixins.fluid-text(20, 14);
+
+			@include media.mobile {
+			}
+			th,
+			td {
+				border: 2px solid var(--color-red);
+				text-align: start;
+				padding: 0;
+				padding: calc(var(--padding-base) / 2);
+
+				@include media.mobile {
+					padding: 10px;
+				}
+				@include media.mobile-s {
+					text-align: center;
+				}
+
+				a {
+					color: var(--color-red);
+					display: block;
+					width: 100%;
+				}
+				
+			}
+		}
+	}
+}

@@ -1,0 +1,34 @@
+@use '../../styles/media';
+.breadcrumbs {
+	padding-block: calc(var(--padding-base)/2);
+	background-color: var(--color-secondary);
+	font-size: 16px;
+
+
+	.breadcrumbs-container {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 8px;
+
+		
+
+		.breadcrumbs-item {
+			display: flex;
+			gap: 8px;
+
+		
+			span {
+				color: var(--color-red);
+			}
+			&:not(:first-child){
+				// padding-left: 8px;
+			}
+		}
+	}
+
+	a {
+		@include media.hover {
+			color: var(--color-red);
+		}
+	}
+}
