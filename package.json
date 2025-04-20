@@ -14,7 +14,7 @@
     "file-saver": "^2.0.5",
     "flickity": "^2.3.0",
     "mongoose": "^8.5.3",
-    "next": "14.2.5",
+    "next": "^14.2.25",
     "next-auth": "^4.24.7",
     "next-progress": "^2.3.1",
     "next-transpile-modules": "^10.0.1",
