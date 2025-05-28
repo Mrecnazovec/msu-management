@@ -6,15 +6,14 @@ import { AuthProvider } from './Providers'
 import './styles/styles.scss'
 import AdminPanel from './components/admin-panel/AdminPanel'
 
-
 export const metadata = {
 	title: 'Факультет Менеджмент ТФ МГУ имени М.В.Ломоносова',
 	authors: [{ name: 'Aleksandr A. Salnikov', url: 'https://t.me/AlexITdrom' }],
 	icon: './icon.ico',
+	robots: { index: false, follow: false },
 }
 
 export default function RootLayout({ children }) {
-	
 	return (
 		<html lang='en'>
 			<body>
