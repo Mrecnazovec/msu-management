@@ -4,7 +4,6 @@ import Header from './components/header/Header'
 import Marquee from './components/marquee/Marquee'
 import { AuthProvider } from './Providers'
 import './styles/styles.scss'
-import AdminPanel from './components/admin-panel/AdminPanel'
 
 export const metadata = {
 	title: 'Факультет Менеджмент ТФ МГУ имени М.В.Ломоносова',
