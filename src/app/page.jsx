@@ -1,4 +1,3 @@
-import { redirect } from 'next/navigation'
 import Banner from './components/banner/Banner'
 import Navigation from './components/navigationCards/Navigation'
 import News from './components/news/News'
@@ -50,7 +49,6 @@ export default function Home() {
 			href: '/entrance',
 		},
 	]
-	redirect('https://msu-management.uz')
 
 	return (
 		<main className={styles.main}>

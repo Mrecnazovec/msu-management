@@ -3,7 +3,6 @@ import Banner from '../components/banner/Banner'
 import Navigation from '../components/navigationCards/Navigation'
 import Quote from '../components/quote/Quote'
 import './page.scss'
-import { redirect } from 'next/navigation'
 
 export const metadata = {
 	title: 'Университет',
@@ -32,9 +31,6 @@ const University = () => {
 		},
 	]
 
-		redirect('https://msu-management.uz/university')
-	
-
 	return (
 		<main className='main'>
 			<Banner src='mainBuilding' title='Университет ТФ МГУ' />
@@ -62,8 +58,6 @@ const University = () => {
 					<div className='container-section'>
 						<h2 className='h2'>Дополнительные разделы с информацией:</h2>
 						<p>В разделах предоставлена актуальная информация про наш университет</p>
-
-						
 					</div>
 				</div>
 				<Navigation params={params} />

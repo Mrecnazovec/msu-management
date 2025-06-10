@@ -1,7 +1,6 @@
 import Link from 'next/link'
 import Banner from '../components/banner/Banner'
 import './page.scss'
-import { redirect } from 'next/navigation'
 
 export const metadata = {
 	title: 'Поступающим',
@@ -9,8 +8,6 @@ export const metadata = {
 }
 
 const Entrance = () => {
-
-	redirect('https://msu-management.uz/applicant')
 	return (
 		<main className='entrance'>
 			<Banner src='entrance' title='Приём абитуриентов ТФ МГУ' />
