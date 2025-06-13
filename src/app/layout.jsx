@@ -1,5 +1,3 @@
-'use client'
-
 import NextTopLoader from 'nextjs-toploader'
 import Footer from './components/footer/Footer'
 import Header from './components/header/Header'
@@ -8,12 +6,12 @@ import { AuthProvider } from './Providers'
 import './styles/styles.scss'
 import { redirect } from 'next/navigation'
 
-// export const metadata = {
-// 	title: 'Факультет Менеджмент ТФ МГУ имени М.В.Ломоносова',
-// 	authors: [{ name: 'Aleksandr A. Salnikov', url: 'https://t.me/AlexITdrom' }],
-// 	icon: './icon.ico',
-// 	robots: { index: false, follow: false },
-// }
+export const metadata = {
+	title: 'Факультет Менеджмент ТФ МГУ имени М.В.Ломоносова',
+	authors: [{ name: 'Aleksandr A. Salnikov', url: 'https://t.me/AlexITdrom' }],
+	icon: './icon.ico',
+	robots: { index: false, follow: false },
+}
 
 export default function RootLayout({ children }) {
 	redirect('https://msu-management.uz')
