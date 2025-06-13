@@ -1,9 +1,12 @@
+'use client'
+
 import NextTopLoader from 'nextjs-toploader'
 import Footer from './components/footer/Footer'
 import Header from './components/header/Header'
 import Marquee from './components/marquee/Marquee'
 import { AuthProvider } from './Providers'
 import './styles/styles.scss'
+import { redirect } from 'next/navigation'
 
 export const metadata = {
 	title: 'Факультет Менеджмент ТФ МГУ имени М.В.Ломоносова',
@@ -13,6 +16,7 @@ export const metadata = {
 }
 
 export default function RootLayout({ children }) {
+	redirect('https://msu-management.uz')
 	return (
 		<html lang='en'>
 			<body>
